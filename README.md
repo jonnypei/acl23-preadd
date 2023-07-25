@@ -1,6 +1,6 @@
 # PreAdD: Prefix-Adaptive Decoding for Controlled Text Generation
 
-This repository contains a code implementation of the paper "PreAdD: Prefix-Adaptive Decoding for Controlled Text Generation" by Jonathan Pei, Kevin Yang, and Dan Klein. 
+This repository contains a code implementation of the paper ["PreAdD: Prefix-Adaptive Decoding for Controlled Text Generation"](https://arxiv.org/abs/2307.03214) by Jonathan Pei, Kevin Yang, and Dan Klein. 
 
 ## Setup/Installation
 
@@ -56,10 +56,6 @@ CUDA_VISIBLE_DEVICES=0 python scripts/experiments/evaluate_bias.py --save_dir ev
 ```
 **Note:** make sure that the `model_string` parameter here is the same as the model on the server (or at least has the same tokenizer).
 
-### Sentiment Control
-
-Coming soon!
-
 ## Analysis
 
 ### Toxicity Mitigation
@@ -85,10 +81,6 @@ Then, to perform a paired t-test on two sets of outputs, run e.g.:
 ```
 python scripts/analysis/analyze_bias_results.py --outputs evaluation_outputs/bias_basic/preadd_pos_-1.0__outputs.jsonl evaluation_outputs/bias_basic/raw_prompting_outputs.jsonl
 ```
-
-### Sentiment Control 
-
-Coming soon!
 
 ## Adapting your own prefix
 
