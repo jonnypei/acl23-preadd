@@ -56,6 +56,14 @@ CUDA_VISIBLE_DEVICES=0 python scripts/experiments/evaluate_bias.py --save_dir ev
 ```
 **Note:** make sure that the `model_string` parameter here is the same as the model on the server (or at least has the same tokenizer).
 
+### Sentiment Control
+
+To generate outputs and evaluate metrics, run:
+```
+CUDA_VISIBLE_DEVICES=0 python scripts/experiments/evaluate_sentiment.py --save_dir evaluation_outputs --prompts_setting sentiment --method preadd --prefix_setting pos --strength 2.0 --model_string facebook/opt-6.7b
+```
+**Note:** make sure that the `model_string` parameter here is the same as the model on the server (or at least has the same tokenizer).
+
 ## Analysis
 
 ### Toxicity Mitigation
@@ -81,6 +89,10 @@ Then, to perform a paired t-test on two sets of outputs, run e.g.:
 ```
 python scripts/analysis/analyze_bias_results.py --outputs evaluation_outputs/bias_basic/preadd_pos_-1.0__outputs.jsonl evaluation_outputs/bias_basic/raw_prompting_outputs.jsonl
 ```
+
+### Sentiment Control
+
+Run similar commands as previous two tasks.
 
 ## Adapting your own prefix
 
